@@ -15,8 +15,13 @@ Diretor paula = new Diretor();
 paula.Nome = "Paula";
 paula.Cpf = "8142121";
 paula.Salario = 5000;
+
+Funcionario andre = new Diretor();
+andre.Nome = "André";
+
 Console.WriteLine("Bonificação: "+paula.getBonificacao());
 Console.WriteLine("Bonificação: " + pedro.getBonificacao());
+
 
 
 gerenciador.Registrar(pedro);
