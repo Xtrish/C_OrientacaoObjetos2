@@ -31,8 +31,8 @@ namespace bytebank_ADM.Funcionarios
         public string Cpf { get; private set; }
 
         public double Salario { get; protected set; }
-            
+
         public static int totalFuncionarios { get; private set; }
-       
+
     }
 }
