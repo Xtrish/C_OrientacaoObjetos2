@@ -4,31 +4,41 @@ using bytebank_ADM.Ultilitatio;
 
 Console.WriteLine("Boas Vindas, ao ByteBank Administração");
 
-GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
 
-Funcionario pedro = new Funcionario();
-pedro.Nome = "Pedro";
-pedro.Cpf = "123456789-7";
-pedro.Salario = 2000;
+CalcularBonificacao();
+void CalcularBonificacao()
+{
+    GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
 
-Diretor paula = new Diretor();
-paula.Nome = "Paula";
-paula.Cpf = "8142121";
-paula.Salario = 5000;
+    Designer pedro = new Designer("456.854.655-89");
+    pedro.Nome = "Pedro";
 
-Funcionario andre = new Diretor();
-andre.Nome = "André";
+    Desenvolvedor samya = new Desenvolvedor("654.759.315.73");
+    samya.Nome = "Samya";
 
-Console.WriteLine("Bonificação: "+paula.getBonificacao());
-Console.WriteLine("Bonificação: " + pedro.getBonificacao());
+    Diretor paula = new Diretor("258+963.741-65");
+    paula.Nome = "Paula";
 
 
+    Auxiliar igor = new Auxiliar("789.753.951-30");
+    igor.Nome = "Igor";
 
-gerenciador.Registrar(pedro);
-gerenciador.Registrar(paula);
-Console.WriteLine("Total de bonificacao: " + gerenciador.getBonificacao());
+    GerenteDeContas camila = new GerenteDeContas("159.753.654-15");
+    camila.Nome = "Camila";
 
-Console.ReadKey();
+    gerenciador.Registrar(pedro);
+    gerenciador.Registrar(paula);
+    gerenciador.Registrar(igor);
+    gerenciador.Registrar(camila);
+    gerenciador.Registrar(samya);
 
+    Console.WriteLine("Total de bonificação: " + gerenciador.getBonificacao());
+
+
+
+
+
+    Console.ReadKey();
+}
 
 
