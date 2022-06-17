@@ -1,4 +1,5 @@
 ﻿using bytebank_ADM.Funcionarios;
+using bytebank_ADM.ParceriaComercial;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,12 @@ namespace bytebank_ADM.SistemaInterno
 {
     public class SistemaInterno
     {
-       public bool Logar(Autenticavel funcionario, string senha,string login)
+       public bool Logar(IAutenticavel funcionario, string senha)
         {
-            bool usuarioAutenticado = funcionario.Autenticar(login,senha);
+            bool usuarioAutenticado = funcionario.Autenticar(senha);
             if (usuarioAutenticado== true)
             {
-                Console.WriteLine("Bem Vindo ao Sistema, "+funcionario.Nome);
+                Console.WriteLine("Bem Vindo ao Sistema");
                 return true;
             }
             else
@@ -24,19 +25,7 @@ namespace bytebank_ADM.SistemaInterno
             }
         }
 
-        public bool Logar(GerenteDeContas funcionario, string senha,string login)
-        {
-            bool usuarioAutenticado = funcionario.Autenticar(login,senha);
-            if (usuarioAutenticado == true)
-            {
-                Console.WriteLine("Bem Vindo ao Sistema, "+funcionario.Nome);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Senha Incorreta");
-                return false;
-            }
-        }
+        
+        
     }
 }

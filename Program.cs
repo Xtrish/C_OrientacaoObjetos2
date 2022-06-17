@@ -1,5 +1,6 @@
 ﻿
 using bytebank_ADM.Funcionarios;
+using bytebank_ADM.ParceriaComercial;
 using bytebank_ADM.SistemaInterno;
 using bytebank_ADM.Ultilitatio;
 
@@ -8,7 +9,7 @@ Console.WriteLine("Boas Vindas, ao ByteBank Administração");
 
 //CalcularBonificacao();
 
-UsarSistema();
+//UsarSistema();
 
 void CalcularBonificacao()
 {
@@ -52,19 +53,19 @@ void UsarSistema()
     Diretor roberta = new Diretor("988.684.625-55");
     roberta.Nome = "Roberta";
     roberta.Senha = "123";
-    roberta.Login = "roberta@gmail.com";
+  
 
     GerenteDeContas ursula = new GerenteDeContas("154.785.888-96");
     ursula.Nome = "Ursula";
     ursula.Senha = "321";
-    ursula.Login = "ursula1925@cade.com";
+
 
     Funcionario pedro =  new  Designer("7854.965.032-32");
     pedro.Nome = "Pedro";
  
 
-    sistemainterno.Logar(roberta, roberta.Senha,roberta.Login);
-    sistemainterno.Logar(ursula, ursula.Senha,ursula.Login);
+    sistemainterno.Logar(roberta, roberta.Senha);
+    sistemainterno.Logar(ursula, ursula.Senha);
 
 }
 
@@ -74,10 +75,23 @@ SistemaInterno sistemaInterno = new SistemaInterno();
 
 Diretor bernardo = new Diretor("159.635.398-04");
 bernardo.Nome = "Bernardo";
-bernardo.Login = "bernardo@email.com";
 bernardo.Senha = "flaflu2019";
 
-sistemaInterno.Logar(bernardo, bernardo.Senha, bernardo.Login);
+
+
+
+ParceiroComercial joao = new ParceiroComercial();
+joao.Senha = "123";
+joao.Nome = "Joao";
+
+
+GerenteDeContas ursula = new GerenteDeContas("154.785.888-96");
+ursula.Nome = "Ursula";
+ursula.Senha = "321";
+
+sistemaInterno.Logar(bernardo, bernardo.Senha);
+sistemaInterno.Logar(ursula, "323");
+sistemaInterno.Logar(joao, joao.Senha);
 
 
 Console.ReadKey();
